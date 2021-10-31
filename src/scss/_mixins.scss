@@ -1,0 +1,44 @@
+@mixin button {
+    background-color: $primary;
+    border: none;
+    border-radius: 0.25rem;
+    color: $white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.625rem;
+    text-align: center;
+    width: 100%;
+    max-width: 160px;
+}
+
+@mixin card {
+    background-color: white;
+    padding: 2.5rem;
+    border: 1px solid $lightGray;
+}
+
+@mixin input {
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    border: 1px solid $lightBlue;
+    color: $fontColor;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        width: 0.625rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $light-blue-2;
+        border: 1px solid $light-gray;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $primary;
+        outline: 1px solid slategrey;
+    }
+}

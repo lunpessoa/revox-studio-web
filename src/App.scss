@@ -1,0 +1,154 @@
+@import './scss/tooltip.scss';
+@import '~vue-multiselect/dist/vue-multiselect.min.css';
+
+// Font faces
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Regular.ttf');
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Bold.ttf');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Light.ttf');
+	font-weight: lighter;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Medium.ttf');
+	font-weight: 600;
+}
+
+html,
+body,
+#app {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote {
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	}
+}
+
+q {
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.loader-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #234057;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #345b7c;
+}
+
+/* Skeleton loader */
+.skeleton {
+	box-shadow: 0 4px 10px 0 rgba(255, 255, 255, 0.55);
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.skeleton::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -150px;
+	top: 0;
+	height: 100%;
+	width: 150px;
+	background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+	animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+	from {
+		left: -150px;
+	}
+	to {
+		left: 100%;
+	}
+}
+.html2canvas-container {
+	height: 3000px !important;
+}

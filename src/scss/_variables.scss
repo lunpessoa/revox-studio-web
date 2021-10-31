@@ -1,0 +1,29 @@
+// Theme Colors
+$primary: #AD7756;
+$primary-gradient: linear-gradient(90deg, #AD7756 0%, #865946 97.99%);
+$secondary: #A4ADC6;
+$secondary-gradient: linear-gradient(90deg, #4B4B4B 0%, #717787 97.99%);
+$info: #5CA0C8;
+$success: #25B883;
+$danger: #DC5C5C;
+$dark: #494949;
+
+// Custom Colors
+$green:  #25B883;
+$red: #DC5C5C;
+$dark-primary: #865946;
+$light-gray: #E5E5E5;
+$white: #ffffff;
+$black: #000000;
+$custom-black: #4B4B4B;
+
+// Custom Colors
+$font-table: 0.75rem;
+
+// Transitions
+$transition-default: ease-in-out 300ms;
+$transition-fast: ease-in-out 200ms;
+$transition-slow: ease-in-out 600ms;
+
+// Shadows
+$primary-shadow: 0px 2px 6px rgba(146, 146, 146, 0.25);
