@@ -17,18 +17,26 @@
         </li>
       </router-link>
     </ul>
+    <span class="logout" :class="[!mobile && 'active']">
+      <div class="icon">
+        <LeaveIcon />
+      </div>
+      <label class="title" v-show="!mobile">Logout</label>
+    </span>
   </nav>
 </template>
 
 <script>
 import HamburguerIcon from '@/components/Shared/Icons/HamburguerIcon'
+import LeaveIcon from '@/components/Shared/Icons/LeaveIcon'
 
 import { routes } from '@/router/index.js'
 
 export default {
   name: 'Sidebar',
   components: {
-    HamburguerIcon
+    HamburguerIcon,
+    LeaveIcon
   },
   props: {
     mobile: {
