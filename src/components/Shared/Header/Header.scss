@@ -1,0 +1,22 @@
+#Header {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  padding: 20px 20px 20px 0;
+  // background: $primary;
+  transition: width .5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .toggle-icon {
+    position: relative;
+    cursor: pointer;
+    align-self: flex-start;
+
+    & > svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

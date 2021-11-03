@@ -1,12 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Sidebar :mobile="isMobile"/>
+    <div class="content" :class="[isMobile && 'active']">
+      <Header @toggleMenu="toggleMenu"/> 
+      <router-view />
     </div>
-    <router-view/>
   </div>
 </template>
+
+<script>
+import Sidebar from '@/components/Shared/Sidebar/Sidebar.vue';
+import Header from '@/components/Shared/Header/Header.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Sidebar,
+    Header,
+  },
+  data() {
+    return {
+      isMobile: false,
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMobile = !this.isMobile;
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 @import "App.scss";

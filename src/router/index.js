@@ -1,29 +1,54 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Home from '@/views/Home.vue';
+import Login from '@/views/Login.vue';
+
+import BarberChairIcon from '@/components/Shared/Icons/BarberChairIcon'
+import ProfileIcon from '@/components/Shared/Icons/ProfileIcon'
+import ScheduleIcon from '@/components/Shared/Icons/ScheduleIcon'
 
 Vue.use(VueRouter);
 
-const routes = [
+export const unauthenticatedRoutes = [
   {
-    path: '/',
-    name: 'Home',
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+];
+
+export const routes = [
+  {
+    path: '/establishments',
+    name: 'Establishments',
+    alias: '/',
+    menuLabel: 'Estabelecimentos',
+    icon: BarberChairIcon,
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/schedule',
+    name: 'Schedule',
+    menuLabel: 'Agenda',
+    icon: ScheduleIcon,
+    component: Home,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    menuLabel: 'Perfil',
+    icon: ProfileIcon,
+    component: Home,
   },
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes: [
+    ...routes,
+    ...unauthenticatedRoutes,
+  ],
 });
 
 export default router;

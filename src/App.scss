@@ -90,6 +90,16 @@ table {
 	border-spacing: 0;
 }
 
+.content {
+	margin-left: 300px;
+	padding: 0 20px 0 40px;
+	transition: margin-left .35s ease-out;
+
+	&.active {
+		margin-left: 70px;
+	}
+}
+
 .loader-container {
 	position: absolute;
 	top: 0;
