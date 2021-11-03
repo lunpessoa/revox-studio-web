@@ -1,6 +1,12 @@
 <template>
   <nav id="Sidebar" :class="[!mobile && 'active']">
     <ul>
+      <li class="logo-container" :class="[!mobile && 'active']">
+        <div class="icon">
+          <RevoxIcon />
+        </div>
+        <label class="title" v-show="!mobile">ReVox Studios</label>
+      </li>
       <router-link
         v-for="route in routes" 
         :key="route.menuLabel"
@@ -28,6 +34,7 @@
 
 <script>
 import HamburguerIcon from '@/components/Shared/Icons/HamburguerIcon'
+import RevoxIcon from '@/components/Shared/Icons/Logo'
 import LeaveIcon from '@/components/Shared/Icons/LeaveIcon'
 
 import { routes } from '@/router/index.js'
@@ -35,6 +42,7 @@ import { routes } from '@/router/index.js'
 export default {
   name: 'Sidebar',
   components: {
+    RevoxIcon,
     HamburguerIcon,
     LeaveIcon
   },
