@@ -8,6 +8,7 @@ import router from './router';
 import store from './store';
 
 import 'vue-toastification/dist/index.css';
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
 Vue.use(VueTheMask);
 Vue.use(VTooltip);

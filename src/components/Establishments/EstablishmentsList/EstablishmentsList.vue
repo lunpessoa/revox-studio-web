@@ -1,6 +1,5 @@
 <template>
-  <div id="Establishments">
-    <!-- <h1>Estabelecimentos</h1> -->
+  <div id="EstablishmentsList">
 		<SearchInput placeholder="Buscar" @updateTasks="updateTasks"/>
     <div class="establishments-container">
       <EstablishmentCard v-for="x in 14" :key="x"/>
@@ -9,11 +8,11 @@
 </template>
 
 <script>
-import EstablishmentCard from '@/components/Establishment/EstablishmentCard/EstablishmentCard';
+import EstablishmentCard from '@/components/Establishments/EstablishmentCard/EstablishmentCard';
 import SearchInput from '@/components/Inputs/SearchInput';
 
 export default {
-  name: 'Home',
+  name: 'EstablishmentsList',
   components: {
     EstablishmentCard,
     SearchInput
@@ -22,6 +21,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "Establishments.scss";
+@import "EstablishmentsList.scss";
 </style>
 

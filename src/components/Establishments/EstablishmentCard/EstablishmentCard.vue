@@ -17,7 +17,7 @@
       </div>
       <div class="card-footer">
         <p>Av. Prefeito João Pires Filho, 22 - 13 de Maio</p>
-        <button>Visitar</button>
+        <button @click="goEstablishment">Visitar</button>
       </div>
     </div>
   </div>
@@ -26,6 +26,11 @@
 <script>
 export default {
   name: 'EstablishmentCard',
+  methods: {
+    goEstablishment() {
+      this.$router.push({ name: 'Establishment' });
+    }
+  }
 };
 </script>
 
