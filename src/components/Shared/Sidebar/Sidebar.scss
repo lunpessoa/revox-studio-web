@@ -1,5 +1,6 @@
 #Sidebar {
   position: fixed;
+  z-index: 10;
   height: 100vh;
   width: 85px;
   display: flex;
@@ -97,14 +98,14 @@
       cursor: pointer;
 
       &.link-active {
-        background: $white;
+        background: $primary-gray;
         b:nth-child(1) {
           content: '';
           position: absolute;
           top: -20px;
           height: 20px;
           width: 100%;
-          background: $white;
+          background: $primary-gray;
           &::before {
             content: '';
             position: absolute;
@@ -121,7 +122,7 @@
           bottom: -20px;
           height: 20px;
           width: 100%;
-          background: $white;
+          background: $primary-gray;
           &::before {
             content: '';
             position: absolute;

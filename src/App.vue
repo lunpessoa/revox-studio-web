@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Sidebar :mobile="isMobile"/>
+    <Header @toggleMenu="toggleMenu"/> 
     <div class="content" :class="[isMobile && 'active']">
-      <Header @toggleMenu="toggleMenu"/> 
       <router-view />
     </div>
   </div>
@@ -24,8 +24,8 @@ export default {
     }
   },
   methods: {
-    toggleMenu() {
-      this.isMobile = !this.isMobile;
+    toggleMenu(isMobile) {
+      this.isMobile = isMobile;
     }
   }
 };

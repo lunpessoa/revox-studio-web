@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 
+import Establishments from '@/views/Establishments/Establishments'
+
 import BarberChairIcon from '@/components/Shared/Icons/BarberChairIcon'
 import ProfileIcon from '@/components/Shared/Icons/ProfileIcon'
 import ScheduleIcon from '@/components/Shared/Icons/ScheduleIcon'
@@ -24,7 +26,7 @@ export const routes = [
     alias: '/',
     menuLabel: 'Estabelecimentos',
     icon: BarberChairIcon,
-    component: Home,
+    component: Establishments,
   },
   {
     path: '/schedule',

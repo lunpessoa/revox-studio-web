@@ -26,6 +26,7 @@
 html,
 body,
 #app {
+	background: $primary-gray;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 600;
 }
@@ -92,7 +93,7 @@ table {
 
 .content {
 	margin-left: 300px;
-	padding: 0 20px 0 40px;
+	padding: 0 20px 20px 40px;
 	transition: margin-left .35s ease-out;
 
 	&.active {
@@ -121,13 +122,13 @@ table {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #234057;
+	background: #F8AE36;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #345b7c;
+	background: #ffc15d;
 }
 
 /* Skeleton loader */
