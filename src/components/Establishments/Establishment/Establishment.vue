@@ -124,10 +124,11 @@
               </tbody>
             </table>
           </div>
-          <button class="btn btn-primary w-100">Agendar</button>
+          <button class="btn btn-primary w-100" @click="openScheduling">Agendar</button>
         </div>
       </b-col>
-    </b-row> 
+    </b-row>
+    <SchedulingModal />
   </div>
 </template>
 
@@ -137,8 +138,14 @@ import FacebookIcon from '@/components/Shared/Icons/Facebook'
 import InstagramIcon from '@/components/Shared/Icons/Instagram'
 import WhatsappIcon from '@/components/Shared/Icons/Whatsapp'
 import ArrowIcon from '@/components/Shared/Icons/ArrowIcon'
+import SchedulingModal from "@/components/Establishments/SchedulingModal/SchedulingModal.vue";
+
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+
+import { 
+  SELECT_ESTABLISHMENT_SCHEDULING,
+} from "@/store/establishments/actions"
 
 export default {
   name: 'Establishment',
@@ -148,7 +155,8 @@ export default {
     InstagramIcon,
     WhatsappIcon,
     ArrowIcon,
-    VueSlickCarousel
+    VueSlickCarousel,
+    SchedulingModal
   },
   data() {
     return {
@@ -156,8 +164,8 @@ export default {
     }
   },
   methods: {
-    goEstablishment() {
-      this.router.push('home')
+    openScheduling() {
+      this.$store.dispatch(SELECT_ESTABLISHMENT_SCHEDULING, this.checkService)
     }
   },
   computed: {

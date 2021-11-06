@@ -2,7 +2,7 @@
   <div id="app">
     <Sidebar :mobile="isMobile"/>
     <Header @toggleMenu="toggleMenu"/> 
-    <div class="content" :class="[isMobile && 'active']">
+    <div class="content-app" :class="[isMobile && 'active']">
       <router-view />
     </div>
   </div>

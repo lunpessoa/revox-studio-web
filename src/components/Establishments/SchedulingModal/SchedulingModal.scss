@@ -1,0 +1,36 @@
+#DeleteMarketingModal {
+    .icon-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon {
+            height: 110px;
+            width: auto;
+        }
+    }
+    .content {
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            color: #4F4F4F;
+            font-family: Open Sans;
+            font-weight: 800;
+            font-size: 24px;
+            text-align: center;
+            margin: 1.25rem 0;
+        }
+        p {
+            text-align: center;
+            font-size: 16px;
+        }
+        .btn-create {
+            height: auto;
+            padding: 0.875rem 5rem;
+            border-radius: 10px;
+        }
+    }
+}

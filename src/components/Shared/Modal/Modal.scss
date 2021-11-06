@@ -1,0 +1,21 @@
+.modal {
+    .modal-content {
+        border-radius: 10px;
+        border: none;
+    }
+    .modal-header {
+        padding: 1rem 2rem 1rem;
+        border: none;
+        .close {
+            opacity: 1;
+            &:hover {
+                opacity: 0.75;
+            }
+            svg {
+                height: auto;
+                width: 20px;
+            }
+        }
+    }
+
+}

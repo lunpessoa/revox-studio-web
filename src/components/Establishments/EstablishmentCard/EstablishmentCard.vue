@@ -1,5 +1,5 @@
 <template>
-  <div id="EstablishmentCard">
+  <div id="EstablishmentCard" @click="goEstablishment">
     <div class="card-header">
       <div class="img-container">
         <img src="../../../assets/images/establishment.jpg" alt="">
