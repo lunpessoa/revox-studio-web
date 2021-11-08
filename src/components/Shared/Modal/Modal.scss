@@ -4,8 +4,11 @@
         border: none;
     }
     .modal-header {
-        padding: 1rem 2rem 1rem;
         border: none;
+        .modal-title {
+            font-weight: 600;
+            color: $dark-primary;
+        }
         .close {
             opacity: 1;
             &:hover {
