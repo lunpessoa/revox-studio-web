@@ -1,6 +1,6 @@
 <template>
   <div id="EstablishmentsList">
-		<SearchInput placeholder="Buscar" @updateTasks="updateTasks"/>
+		<SearchInput placeholder="Buscar"/>
     <div class="establishments-container">
       <EstablishmentCard v-for="x in 14" :key="x"/>
     </div>

@@ -1,11 +1,11 @@
 <template>
-  <nav id="Sidebar" :class="[!mobile && 'active']">
+  <nav id="Sidebar" :class="[!isMobile && 'active']">
     <ul>
-      <li class="logo-container" :class="[!mobile && 'active']">
+      <li class="logo-container" :class="[!isMobile && 'active']">
         <div class="icon">
           <RevoxIcon />
         </div>
-        <label class="title" v-show="!mobile">ReVox Studios</label>
+        <label class="title" v-show="!isMobile">ReVox Studios</label>
       </li>
       <router-link
         v-for="route in routes" 
@@ -23,11 +23,11 @@
         </li>
       </router-link>
     </ul>
-    <span class="logout" :class="[!mobile && 'active']">
+    <span class="logout" :class="[!isMobile && 'active']">
       <div class="icon">
         <LeaveIcon />
       </div>
-      <label class="title" v-show="!mobile">Logout</label>
+      <label class="title" v-show="!isMobile">Logout</label>
     </span>
   </nav>
 </template>
@@ -46,12 +46,6 @@ export default {
     HamburguerIcon,
     LeaveIcon
   },
-  props: {
-    mobile: {
-      type: Boolean,
-      required: true,
-    }
-  },
   data() {
     return {
       colors: ["#FFFFFF", "#3B185F"],
@@ -60,6 +54,9 @@ export default {
   computed: {
     routes() {
       return routes;
+    },
+    isMobile() {
+      return this.$store.getters.getMobile;
     }
   },
 };

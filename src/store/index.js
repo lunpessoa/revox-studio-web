@@ -6,12 +6,14 @@ import * as Cookies from 'js-cookie';
 
 /* Modules Import */
 import establishments from './establishments';
+import user from './user';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
 	modules: {
-		establishments,
+		user,
+		establishments
 	},
 	plugins: [
 		createPersistedState({

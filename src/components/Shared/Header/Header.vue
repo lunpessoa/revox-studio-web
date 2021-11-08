@@ -15,6 +15,10 @@
 <script>
 import HamburguerIcon from '@/components/Shared/Icons/HamburguerIcon'
 
+import { 
+  SET_MOBILE,
+} from "@/store/user/actions"
+
 export default {
   name: 'Header',
   components: {
@@ -23,13 +27,18 @@ export default {
   data() {
     return {
       colors: ["#FFFFFF", "#3B185F"],
-      isMobile: false,
     }
   },
   methods: {
     toggleMenu() {
-      this.isMobile = !this.isMobile
-      this.$emit('toggleMenu', this.isMobile);
+      console.log(this.isMobile);
+      this.$store.dispatch(SET_MOBILE);
+      console.log(this.isMobile);
+    }
+  },
+  computed: {
+    isMobile() {
+      return this.$store.getters.getMobile;
     }
   }
 };

@@ -20,7 +20,7 @@
         trim-weeks 
         :min-date="new Date()"
         :model-config="modelConfig"
-        first-day-of-week="1"
+        :first-day-of-week="1"
         color="purple"
       />
       <div class="hours-container my-3" v-if="hours.length > 0">

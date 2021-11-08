@@ -21,11 +21,16 @@ export const unauthenticatedRoutes = [
   },
 ];
 
+const home = {
+    path: '/',
+    name: 'Home',
+    redirect: '/establishments',
+}
+
 export const routes = [
   {
     path: '/establishments',
     name: 'Establishments',
-    alias: '/',
     menuLabel: 'Estabelecimentos',
     icon: BarberChairIcon,
     component: Establishments,
@@ -63,6 +68,7 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    home,
     ...routes,
     ...unauthenticatedRoutes,
   ],
