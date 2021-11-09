@@ -7,6 +7,8 @@ import Establishments from '@/views/Establishments'
 import EstablishmentsList from '@/components/Establishments/EstablishmentsList/EstablishmentsList'
 import Establishment from '@/components/Establishments/Establishment/Establishment'
 
+import Schedule from '@/views/Schedule'
+
 import BarberChairIcon from '@/components/Shared/Icons/BarberChairIcon'
 import ProfileIcon from '@/components/Shared/Icons/ProfileIcon'
 import ScheduleIcon from '@/components/Shared/Icons/ScheduleIcon'
@@ -53,7 +55,7 @@ export const routes = [
     name: 'Schedule',
     menuLabel: 'Agenda',
     icon: ScheduleIcon,
-    component: Home,
+    component: Schedule,
   },
   {
     path: '/profile',
