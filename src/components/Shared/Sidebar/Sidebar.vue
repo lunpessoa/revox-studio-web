@@ -23,7 +23,7 @@
         </li>
       </router-link>
     </ul>
-    <span class="logout" :class="[!isMobile && 'active']">
+    <span class="logout" :class="[!isMobile && 'active']" @click="logout">
       <div class="icon">
         <LeaveIcon />
       </div>
@@ -49,6 +49,11 @@ export default {
   data() {
     return {
       colors: ["#FFFFFF", "#3B185F"],
+    }
+  },
+  methods: {
+    logout() {
+      this.$router.push({ name: 'Login' });
     }
   },
   computed: {

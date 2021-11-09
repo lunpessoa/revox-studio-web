@@ -23,9 +23,8 @@
             <p
                 v-for="attr in attributes"
                 :key="attr.key"
-                :style="`background: ${attr.customData.color};color: #FFFFFF;`"
+                :style="`background: ${attr.customData.bg}; color: ${attr.customData.color};`"
                 class="bg-event mb-1"
-                :class="hasEdit ? 'btn-edit' : ''"
             >
                 {{ attr.customData.title }}
             </p>
@@ -64,8 +63,9 @@ export default {
                 key: 1,
                 customData: {
                     id: 1,
-                    color: "#3B185F",
-                    title: `DD/MM/YYYY - Corte de Cabelo`,
+                    color: "#FFFFFF",
+                    bg: "#3B185F",
+                    title: `10:00 - Corte de Cabelo`,
                 },
                 dates: new Date("2021-11-09"),
             },
@@ -73,8 +73,9 @@ export default {
                 key: 2,
                 customData: {
                     id: 2,
-                    color: "#3B185F",
-                    title: `DD/MM/YYYY - Corte de Cabelo`,
+                    color: "#FFFFFF",
+                    bg: "#3B185F",
+                    title: `10:00 - Corte de Cabelo`,
                 },
                 dates: new Date("2021-11-09"),
             },
@@ -82,8 +83,9 @@ export default {
                 key: 3,
                 customData: {
                     id: 3,
-                    color: "#3B185F",
-                    title: `DD/MM/YYYY - Corte de Cabelo`,
+                    color: "#FFFFFF",
+                    bg: "#3B185F",
+                    title: `10:00 - Corte de Cabelo`,
                 },
                 dates: new Date("2021-11-20"),
             },
@@ -91,8 +93,9 @@ export default {
                 key: 4,
                 customData: {
                     id: 4,
-                    color: "#3B185F",
-                    title: `DD/MM/YYYY - Corte de Cabelo`,
+                    color: "#FFFFFF",
+                    bg: "#3B185F",
+                    title: `10:00 - Corte de Cabelo`,
                 },
                 dates: new Date("2021-11-30"),
             },
@@ -100,8 +103,9 @@ export default {
                 key: 5,
                 customData: {
                     id: 5,
-                    color: "#3B185F",
-                    title: `DD/MM/YYYY - Corte de Cabelo`,
+                    color: "#FFFFFF",
+                    bg: "#3B185F",
+                    title: `10:00 - Corte de Cabelo`,
                 },
                 dates: new Date("2021-12-04"),
             },

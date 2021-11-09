@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 
 import Establishments from '@/views/Establishments'
@@ -8,6 +7,7 @@ import EstablishmentsList from '@/components/Establishments/EstablishmentsList/E
 import Establishment from '@/components/Establishments/Establishment/Establishment'
 
 import Schedule from '@/views/Schedule'
+import Profile from '@/views/Profile'
 
 import BarberChairIcon from '@/components/Shared/Icons/BarberChairIcon'
 import ProfileIcon from '@/components/Shared/Icons/ProfileIcon'
@@ -62,7 +62,7 @@ export const routes = [
     name: 'Profile',
     menuLabel: 'Perfil',
     icon: ProfileIcon,
-    component: Home,
+    component: Profile,
   },
 ];
 
