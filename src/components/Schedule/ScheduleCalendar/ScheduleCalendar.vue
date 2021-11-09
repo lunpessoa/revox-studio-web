@@ -13,7 +13,7 @@
         <template #header="page">
             <div class="header-title"> 
                 <CalenderIcon />
-                <h2>{{page.monthLabel}}</h2>
+                <h2 class="mb-0">{{page.monthLabel}}</h2>
             </div>
         </template>
         <template #day-content="{ day, attributes }">
@@ -24,7 +24,7 @@
                 v-for="attr in attributes"
                 :key="attr.key"
                 :style="`background: ${attr.customData.color};color: #FFFFFF;`"
-                class="bg-event"
+                class="bg-event mb-1"
                 :class="hasEdit ? 'btn-edit' : ''"
             >
                 {{ attr.customData.title }}
@@ -76,7 +76,7 @@ export default {
                     color: "#3B185F",
                     title: `DD/MM/YYYY - Corte de Cabelo`,
                 },
-                dates: new Date("2021-11-13"),
+                dates: new Date("2021-11-09"),
             },
             {
                 key: 3,

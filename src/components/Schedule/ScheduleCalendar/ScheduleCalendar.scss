@@ -66,15 +66,16 @@
                     .event-container {
                         display: flex;
                         flex-direction: column;
+                        padding-right: 5px;
                         gap: 6px;
                         overflow: auto;
                         height: 76px; 
-                        &::-webkit-scrollbar {
-                            width: 0px;
-                        }
-                        &::-webkit-scrollbar-track {
-                            display: none;
-                        }
+                        // &::-webkit-scrollbar {
+                        //     width: 0px;
+                        // }
+                        // &::-webkit-scrollbar-track {
+                        //     display: none;
+                        // }
                     }
                 }
             }
