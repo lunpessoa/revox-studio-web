@@ -2,7 +2,7 @@
 	<div class="input-holder">
 		<b-input
 			required
-			id="password"
+			:id="id"
 			class="input-password"
 			:type="fieldType"
 			name="password"
@@ -37,6 +37,10 @@ export default {
 		max: String,
 		placeholder: {
 			type: String
+		},
+		id: {
+			type: String,
+			default: "password"
 		}
 	},
 	data: () => ({

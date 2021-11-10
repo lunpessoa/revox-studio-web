@@ -33,7 +33,7 @@
         <div class="card-footer mt-4">
           <p class="mb-0">
             Ainda não possui conta?
-            <router-link to="/register" class="register ml-2">Registre-se</router-link>
+            <router-link to="/register" class="register ml-1">Registre-se</router-link>
           </p>
         </div>
       </form>
@@ -163,6 +163,7 @@ export default {
 
     .card-footer {
       display: flex;
+      justify-content: center;
       align-items: center;
       padding: 10px;
       background: $primary-gray;

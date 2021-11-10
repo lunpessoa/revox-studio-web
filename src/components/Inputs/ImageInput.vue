@@ -6,7 +6,7 @@
     <div class="edit-icon" @click="$refs.fileInput.click();" v-if="editButton">
       <EditIcon color="#FFFFFF" />
     </div>
-    <div class="img-container" v-if="path && filePath"> 
+    <div class="img-container" v-if="filePath"> 
       <img :src="filePath" class="button-img" @dragstart.prevent>
     </div>
     <div class="button-container" v-else>
@@ -51,7 +51,8 @@ export default {
   },
   methods: {
 	  handleInput(event) {
-      this.$emit('input', event)
+      this.$emit('input', event);
+      event.target.value = '';
     },
   },
   computed: {
@@ -102,8 +103,8 @@ export default {
       }
     }
     &.btn-circle {
-      width: 200px;
-      height: 200px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
 
       .button-container {
@@ -116,8 +117,8 @@ export default {
 
       .close-icon,
       .edit-icon {
-        bottom: 15px;
-        right: 15px;
+        bottom: 2%;
+        right: 2%;
       }
     }
 
@@ -153,7 +154,7 @@ export default {
           }
 
           .icon {
-            width: 80px;
+            width: 60%;
             height: auto;
           }
         }

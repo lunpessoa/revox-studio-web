@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
 import Login from '@/views/Login.vue';
+import Register from '@/views/Register.vue';
 
 import Establishments from '@/views/Establishments'
 import EstablishmentsList from '@/components/Establishments/EstablishmentsList/EstablishmentsList'
@@ -20,6 +22,11 @@ export const unauthenticatedRoutes = [
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
   },
 ];
 
