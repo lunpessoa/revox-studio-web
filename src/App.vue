@@ -25,7 +25,7 @@ export default {
       return this.$store.getters.getMobile;
     },
     isAuthenticated() {
-      return this.$store.getters.isAuthenticated;
+      return true;
     }
   }
 };

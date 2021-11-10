@@ -7,6 +7,7 @@
 			:type="fieldType"
 			name="password"
 			:value="value"
+			:placeholder="placeholder"
 			@input="$emit('input', $event.target.value)"
 			:minlength="min"
 			:maxlength="max"
@@ -34,10 +35,9 @@ export default {
 		},
 		min: String,
 		max: String,
-		focusClass: {
-			default: false,
-			required: false,
-		},
+		placeholder: {
+			type: String
+		}
 	},
 	data: () => ({
 		showPassword: false,

@@ -22,15 +22,12 @@
           />
         </b-form-group>
         <b-form-group label="Password">
-          <PasswordInput v-model="form.password" :min="'6'" :max="'16'"/>
-          <!-- <b-input
-            class="base-input"
-            name="password"
-            type="password"
-            placeholder="Senha"
-            v-model="form.password"
-            @keyup.enter="submitLogin()"
-          /> -->
+          <PasswordInput 
+            v-model="form.password" 
+            placeholder="Senha" 
+            :min="'6'" 
+            :max="'16'"
+          />
         </b-form-group>
         <button class="btn btn-secondary text-light btn-login" @click="submitLogin()">Entrar</button>
         <div class="card-footer mt-4">
