@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Sidebar />
-    <Header /> 
-    <div class="content-app" :class="[isMobile && 'active']">
+    <template v-if="isAuthenticated">
+      <Sidebar />
+      <Header /> 
+    </template>
+    <div class="content-app" :class="[isMobile && 'active', !isAuthenticated && 'logout']">
       <router-view />
     </div>
   </div>
@@ -21,6 +23,9 @@ export default {
   computed: {
     isMobile() {
       return this.$store.getters.getMobile;
+    },
+    isAuthenticated() {
+      return this.$store.getters.isAuthenticated;
     }
   }
 };

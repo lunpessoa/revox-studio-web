@@ -101,6 +101,11 @@ button:focus {
 	padding: 0 20px 20px 40px;
 	transition: margin-left .35s ease-out;
 
+	&.logout {
+		padding: 20px;
+		margin-left: 0px;
+	}
+
 	&.active {
 		margin-left: 70px;
 	}

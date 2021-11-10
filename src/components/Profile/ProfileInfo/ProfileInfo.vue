@@ -12,7 +12,7 @@
         </button>
       </div>
       <div class="card-body">
-        <form>
+        <form @submit.prevent>
           <b-form-group label="Nome">
             <b-input type="text" v-model="form.name" :disabled="!isEdit"/>
           </b-form-group>
