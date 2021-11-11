@@ -1,0 +1,73 @@
+#schedules-calendar {
+    position: sticky;
+    top: 20px;
+    background: $white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    overflow: hidden;
+
+    .custom-calendar.vc-container {
+        background: transparent;
+        width: 100%;
+        border: 1px solid $primary;
+        padding: 10px;
+
+        .vc-header {
+            border-radius: 10px;
+            background-color: $dark-primary;
+            padding: 10px 0;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            
+            .vc-title {
+                color: $light-primary;
+                text-transform: capitalize;
+            }
+        }
+        .vc-arrows-container {
+            .vc-arrow {
+                color: $light-primary;
+                &:hover {
+                    opacity: 0.6;
+                    background: $dark-primary;
+                }
+            }
+        }
+
+        .vc-weeks {
+            margin-top: 20px;
+            gap: 10px;
+
+            .vc-weekday {
+                padding: 20px 0px;
+                font-family: "Poppins", sans-serif;
+                font-size: 14px;
+                color: $dark-primary;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .vc-day {
+                height: 90px;
+                padding: 8px;
+                border-radius: 5px;
+                color: $primary;
+                background-color: $light-primary;
+
+                .is-disabled {
+                    color: $dark-primary;
+                    opacity: 0.6;
+
+                }
+
+                &.is-not-in-month {
+                    background-color: $primary-gray;
+                    & > * {
+                        color: $dark-primary;
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}

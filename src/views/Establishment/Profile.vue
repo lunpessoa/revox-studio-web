@@ -1,16 +1,19 @@
 <template>
   <div class="profile">
-    <UserProfile />
+    <ProfileCard />
+    <ProfileInfo />
   </div>
 </template>
 
 <script>
-import UserProfile from '@/components/Establishment/Profile/UserProfile/UserProfile';
+import ProfileCard from '@/components/Establishment/Profile/ProfileCard/ProfileCard';
+import ProfileInfo from '@/components/Establishment/Profile/ProfileInfo/ProfileInfo';
 
 export default {
   name: 'profile',
   components: {
-    UserProfile,
+    ProfileCard,
+    ProfileInfo
   },
   data() {
     return {
@@ -27,3 +30,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.profile {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: flex-start;
+    gap: 20px;
+}
+</style>

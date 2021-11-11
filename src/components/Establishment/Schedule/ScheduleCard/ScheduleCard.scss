@@ -1,0 +1,68 @@
+#schedule-card {
+    position: relative;
+    background: $primary-gray;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-width: 360px;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+
+    .user-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .img-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100px;
+            height: 100px;
+            padding: 3px;
+            border-radius: 10px;
+            border: solid 1px $primary;
+    
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+            }
+        }
+
+        h3 {
+            color: $dark-primary;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .email {
+            font-style: italic;
+            white-space: nowrap;
+            font-size: 12px;
+        }
+        
+        .tell {
+            white-space: nowrap;
+            font-size: 12px;
+        }
+
+        .time, .date {
+            padding: 5px;
+            background: $primary;
+            color: $white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    }
+
+    .close-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

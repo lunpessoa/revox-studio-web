@@ -66,7 +66,7 @@ export default {
       }
     },
     userType() {
-      return "client";
+      return "establishment";
     },
     isMobile() {
       return this.$store.getters.getMobile;

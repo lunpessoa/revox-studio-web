@@ -1,0 +1,37 @@
+.schedules-list {
+    background: $white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    overflow: hidden;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $dark-primary;
+        border: inherit;
+        padding: 10px;
+        &:first-child { 
+            border-radius: 10px;
+        }
+
+        .title {
+            color: $light-primary;
+        }
+
+        .date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: $light-primary;
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

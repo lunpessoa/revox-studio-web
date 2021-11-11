@@ -10,11 +10,9 @@ import Establishment from '@/components/Client/Establishments/Establishment/Esta
 import ClientSchedule from '@/views/Client/Schedule'
 import ClientProfile from '@/views/Client/Profile'
 
-import EstablishmentHome from '@/views/Establishment/Home'
 import EstablishmentSchedule from '@/views/Establishment/Schedule'
 import EstablishmentProfile from '@/views/Establishment/Profile'
 
-import HomeIcon from '@/components/Shared/Icons/HomeIcon'
 import BarberChairIcon from '@/components/Shared/Icons/BarberChairIcon'
 import ProfileIcon from '@/components/Shared/Icons/ProfileIcon'
 import ScheduleIcon from '@/components/Shared/Icons/ScheduleIcon'
@@ -78,13 +76,6 @@ export const clientRoutes = [
 ];
 
 export const establishmentRoutes = [
-  {
-    path: '/establishment/home',
-    name: 'establishmentHome',
-    menuLabel: 'Home',
-    icon: HomeIcon,
-    component: EstablishmentHome,
-  },
   {
     path: '/establishment/schedule',
     name: 'establishmentSchedule',
