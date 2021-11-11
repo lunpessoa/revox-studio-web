@@ -1,19 +1,30 @@
 <template>
   <div class="profile">
-    <ProfileCard />
-    <ProfileInfo />
+    <ProfileBanner style="grid-area: banner;"/>
+    <ProfileCard style="grid-area: profile;"/>
+    <div class="content-info">
+      <ProfileInfo />
+      <ProfileAddress />
+      <ProfileEstablishment />
+    </div>
   </div>
 </template>
 
 <script>
+import ProfileBanner from '@/components/Establishment/Profile/ProfileBanner/ProfileBanner';
 import ProfileCard from '@/components/Establishment/Profile/ProfileCard/ProfileCard';
 import ProfileInfo from '@/components/Establishment/Profile/ProfileInfo/ProfileInfo';
+import ProfileAddress from '@/components/Establishment/Profile/ProfileAddress/ProfileAddress';
+import ProfileEstablishment from '@/components/Establishment/Profile/ProfileEstablishment/ProfileEstablishment';
 
 export default {
   name: 'profile',
   components: {
+    ProfileBanner,
     ProfileCard,
-    ProfileInfo
+    ProfileInfo,
+    ProfileAddress,
+    ProfileEstablishment
   },
   data() {
     return {
@@ -34,8 +45,18 @@ export default {
 <style lang="scss">
 .profile {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+		  "banner banner"
+		  "profile info"
+		;
     align-items: flex-start;
     gap: 20px;
+
+    .content-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      grid-area: "info"
+    }
 }
 </style>
