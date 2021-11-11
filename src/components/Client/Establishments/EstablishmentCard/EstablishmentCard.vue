@@ -2,7 +2,7 @@
   <div id="EstablishmentCard" @click="goEstablishment">
     <div class="card-header">
       <div class="img-container">
-        <img src="../../../assets/images/establishment.jpg" alt="">
+        <img src="../../../../assets/images/establishment.jpg" alt="">
       </div>
       <div class="card-body">
         <div class="d-flex flex-column">

@@ -4,13 +4,17 @@ import VueRouter from 'vue-router';
 import Login from '@/views/Login.vue';
 import Register from '@/views/Register.vue';
 
-import Establishments from '@/views/Establishments'
-import EstablishmentsList from '@/components/Establishments/EstablishmentsList/EstablishmentsList'
-import Establishment from '@/components/Establishments/Establishment/Establishment'
+import ClientEstablishments from '@/views/Client/Establishments'
+import EstablishmentsList from '@/components/Client/Establishments/EstablishmentsList/EstablishmentsList'
+import Establishment from '@/components/Client/Establishments/Establishment/Establishment'
+import ClientSchedule from '@/views/Client/Schedule'
+import ClientProfile from '@/views/Client/Profile'
 
-import Schedule from '@/views/Schedule'
-import Profile from '@/views/Profile'
+import EstablishmentHome from '@/views/Establishment/Home'
+import EstablishmentSchedule from '@/views/Establishment/Schedule'
+import EstablishmentProfile from '@/views/Establishment/Profile'
 
+import HomeIcon from '@/components/Shared/Icons/HomeIcon'
 import BarberChairIcon from '@/components/Shared/Icons/BarberChairIcon'
 import ProfileIcon from '@/components/Shared/Icons/ProfileIcon'
 import ScheduleIcon from '@/components/Shared/Icons/ScheduleIcon'
@@ -36,14 +40,14 @@ const home = {
     redirect: '/establishments',
 }
 
-export const routes = [
+export const clientRoutes = [
   {
-    path: '/establishments',
-    name: 'Establishments',
+    path: '/client/establishments',
+    name: 'clientEstablishments',
     menuLabel: 'Estabelecimentos',
     icon: BarberChairIcon,
-    component: Establishments,
-    redirect: '/establishments/establishment-list',
+    component: ClientEstablishments,
+    redirect: '/client/establishments/establishment-list',
     children: [
       {
         path: 'establishment-list',
@@ -58,18 +62,42 @@ export const routes = [
     ]
   },
   {
-    path: '/schedule',
-    name: 'Schedule',
+    path: '/client/schedule',
+    name: 'clientSchedule',
     menuLabel: 'Agenda',
     icon: ScheduleIcon,
-    component: Schedule,
+    component: ClientSchedule,
   },
   {
-    path: '/profile',
-    name: 'Profile',
+    path: '/client/profile',
+    name: 'clientProfile',
     menuLabel: 'Perfil',
     icon: ProfileIcon,
-    component: Profile,
+    component: ClientProfile,
+  },
+];
+
+export const establishmentRoutes = [
+  {
+    path: '/establishment/home',
+    name: 'establishmentHome',
+    menuLabel: 'Home',
+    icon: HomeIcon,
+    component: EstablishmentHome,
+  },
+  {
+    path: '/establishment/schedule',
+    name: 'establishmentSchedule',
+    menuLabel: 'Agendamentos',
+    icon: ScheduleIcon,
+    component: EstablishmentSchedule,
+  },
+  {
+    path: '/establishment/profile',
+    name: 'establishmentProfile',
+    menuLabel: 'Perfil',
+    icon: ProfileIcon,
+    component: EstablishmentProfile,
   },
 ];
 
@@ -78,7 +106,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: [
     home,
-    ...routes,
+    ...clientRoutes,
+    ...establishmentRoutes,
     ...unauthenticatedRoutes,
   ],
 });

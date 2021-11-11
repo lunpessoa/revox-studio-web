@@ -5,13 +5,13 @@
         <div class="establishment">
           <div class="card-header p-0">
             <div class="img-container">
-              <img src="../../../assets/images/establishment.jpg" alt="">
+              <img src="../../../../assets/images/establishment.jpg" alt="">
             </div>
           </div>
           <div class="card-body">
             <div class="card-title" style="gap: 40px;">
               <div class="img-container">
-                <img src="../../../assets/images/user.png" alt="">
+                <img src="../../../../assets/images/user.png" alt="">
               </div>
               <div class="d-flex justify-content-between align-center w-100" style="gap: 40px;">
                 <h2>Estabelecimento 1</h2>
@@ -37,7 +37,7 @@
                       <div class="comment-user mb-3">
                         <div class="d-flex">
                           <div class="user-picture mr-3">
-                            <img src="../../../assets/images/user.png" alt="">
+                            <img src="../../../../assets/images/user.png" alt="">
                           </div>
                           <h3 class="username mb-0">Luan Pessoa</h3>
                         </div>
@@ -138,7 +138,7 @@ import FacebookIcon from '@/components/Shared/Icons/Facebook'
 import InstagramIcon from '@/components/Shared/Icons/Instagram'
 import WhatsappIcon from '@/components/Shared/Icons/Whatsapp'
 import ArrowIcon from '@/components/Shared/Icons/ArrowIcon'
-import SchedulingModal from "@/components/Establishments/SchedulingModal/SchedulingModal.vue";
+import SchedulingModal from "../SchedulingModal/SchedulingModal.vue";
 
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'

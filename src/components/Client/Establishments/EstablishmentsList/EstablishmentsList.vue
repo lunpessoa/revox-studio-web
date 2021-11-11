@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import EstablishmentCard from '@/components/Establishments/EstablishmentCard/EstablishmentCard';
+import EstablishmentCard from '../EstablishmentCard/EstablishmentCard';
 import SearchInput from '@/components/Inputs/SearchInput';
 
 export default {

@@ -37,7 +37,7 @@ import HamburguerIcon from '@/components/Shared/Icons/HamburguerIcon'
 import RevoxIcon from '@/components/Shared/Icons/Logo'
 import LeaveIcon from '@/components/Shared/Icons/LeaveIcon'
 
-import { routes } from '@/router/index.js'
+import { establishmentRoutes, clientRoutes } from '@/router/index.js'
 
 export default {
   name: 'Sidebar',
@@ -58,7 +58,15 @@ export default {
   },
   computed: {
     routes() {
-      return routes;
+      if(this.userType == "establishment") {
+        return establishmentRoutes
+      }
+      if(this.userType == "client") {
+        return clientRoutes
+      }
+    },
+    userType() {
+      return "client";
     },
     isMobile() {
       return this.$store.getters.getMobile;

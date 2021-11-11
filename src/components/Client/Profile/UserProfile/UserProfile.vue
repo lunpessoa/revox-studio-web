@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import ProfileCard from '@/components/Profile/ProfileCard/ProfileCard';
-import ProfileInfo from '@/components/Profile/ProfileInfo/ProfileInfo';
+import ProfileCard from '../ProfileCard/ProfileCard';
+import ProfileInfo from '../ProfileInfo/ProfileInfo';
 
 export default {
   name: 'UserProfile',

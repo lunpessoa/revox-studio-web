@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UserProfile from '@/components/Profile/UserProfile/UserProfile';
+import UserProfile from '@/components/Establishment/Profile/UserProfile/UserProfile';
 
 export default {
   name: 'profile',
