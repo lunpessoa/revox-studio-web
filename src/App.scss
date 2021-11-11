@@ -111,6 +111,15 @@ button:focus {
 	}
 }
 
+.input-double {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	& > * {
+		flex: 1 1 120px;
+	}
+}
+
 .loader-container {
 	position: absolute;
 	top: 0;

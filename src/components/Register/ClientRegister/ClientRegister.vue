@@ -35,30 +35,30 @@
     </div>
 
     <div id="step-2" v-if="step == 2">
-      <b-form-group label="CPF">
-        <b-input
-          class="base-input"
+      <b-form-group label="CPF ">
+        <the-mask 
+          class="form-control base-input"
           name="cpf"
-          type="text"
           placeholder="CPF"
           v-model="form.cpf"
+          :mask="['###.###.###-##', '##.###.###/####-##']" 
         />
       </b-form-group>
       <b-form-group label="Telefone 1">
-        <b-input
-          class="base-input"
+        <the-mask
+          class="form-control base-input"
           name="tell1"
-          type="text"
           placeholder="(XX) XXXXX-XXXX"
+          :mask="['(##) ####-####', '(##) #####-####']"
           v-model="form.tell1"
         />
       </b-form-group>
       <b-form-group label="Telefone 2">
-        <b-input
-          class="base-input"
+        <the-mask
+          class="form-control base-input"
           name="tell2"
-          type="text"
           placeholder="(XX) XXXXX-XXXX"
+          :mask="['(##) ####-####', '(##) #####-####']"
           v-model="form.tell2"
         />
       </b-form-group>

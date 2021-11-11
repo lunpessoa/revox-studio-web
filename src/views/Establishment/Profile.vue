@@ -3,9 +3,9 @@
     <ProfileBanner style="grid-area: banner;"/>
     <ProfileCard style="grid-area: profile;"/>
     <div class="content-info">
+      <ProfileEstablishment />
       <ProfileInfo />
       <ProfileAddress />
-      <ProfileEstablishment />
     </div>
   </div>
 </template>

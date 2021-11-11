@@ -2,7 +2,7 @@
   <div class="profile-address">
     <div class="basic-info">
       <div class="card-header">
-        <h2 class="mb-0">Meu Perfil</h2>
+        <h2 class="mb-0">Endereço</h2>
         <button class="btn-edit" @click="edit" v-if="!isEdit">
           <EditIcon color="#3B185F" />
           Editar
@@ -13,25 +13,35 @@
       </div>
       <div class="card-body">
         <form @submit.prevent>
-          <b-form-group label="Nome">
-            <b-input type="text" v-model="form.name" :disabled="!isEdit"/>
+          <div class="input-double">
+            <b-form-group label="Rua">
+              <b-input type="text" v-model="form.address" :disabled="!isEdit"/>
+            </b-form-group>
+            <b-form-group label="Número">
+              <b-input type="text" v-model="form.number" :disabled="!isEdit"/>
+            </b-form-group>
+          </div>
+          <b-form-group label="CEP">
+            <the-mask
+              class="form-control"
+              name="cep"
+              placeholder="CEP"
+              :mask="['#####-###']"
+              v-model="form.zip"
+              :disabled="!isEdit"
+            />
           </b-form-group>
-          <b-form-group label="CPF">
-            <b-input type="text" v-model="form.cpf" :disabled="!isEdit"/>
+          <b-form-group label="Bairro">
+            <b-input type="text" v-model="form.district" :disabled="!isEdit"/>
           </b-form-group>
-          <b-form-group label="Email">
-            <b-input type="text" v-model="form.email" disabled/>
-          </b-form-group>
-          <b-form-group label="Data de Nascimento">
-            <b-input type="text" v-model="form.dateBorn" :disabled="!isEdit"/>
-          </b-form-group>
-          <b-form-group label="Telefone 1">
-            <b-input type="text" v-model="form.tell1" :disabled="!isEdit"/>
-          </b-form-group>
-          <b-form-group label="Telefone 2">
-            <b-input type="text" v-model="form.tell2" :disabled="!isEdit"/>
-          </b-form-group>
-          <button class="btn btn-primary d-block" v-if="isEdit">Alterar Senha</button>
+          <div class="input-double">
+            <b-form-group label="Cidade">
+              <b-input type="text" v-model="form.city" :disabled="!isEdit"/>
+            </b-form-group>
+            <b-form-group label="Estado">
+              <b-input type="text" v-model="form.uf" :disabled="!isEdit"/>
+            </b-form-group>
+          </div>
         </form>
       </div>
       <div class="card-footer">
@@ -54,12 +64,12 @@ export default {
   data() {
     return {
       form: {
-        name: 'Luan Pessoa',
-        cpf: '000.000.000-00',
-        email: 'luan.pessoa.393@hotmail.com',
-        dateBorn: '10/02/2002',
-        tell1: '(11) 94071-1175',
-        tell2: '(11) 94071-1175',
+        address: 'Rua Bela Cintra 71',
+        number: '855',
+        zip: '13578-970',
+        district: 'Água Vermelha',
+        city: 'Água Vermelha',
+        uf: 'SP',
       },
       isEdit: false,
     }

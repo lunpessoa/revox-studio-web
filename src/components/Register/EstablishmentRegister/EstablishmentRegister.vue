@@ -36,29 +36,29 @@
     
     <div id="step-2" v-if="step == 2">
       <b-form-group label="CPF / CNPJ">
-        <b-input
-          class="base-input"
+        <the-mask 
+          class="form-control base-input"
           name="cpf"
-          type="text"
           placeholder="CPF / CNPJ"
           v-model="form.CpfCnpj"
+          :mask="['###.###.###-##', '##.###.###/####-##']" 
         />
       </b-form-group>
       <b-form-group label="Telefone 1">
-        <b-input
-          class="base-input"
+        <the-mask
+          class="form-control base-input"
           name="tell1"
-          type="text"
           placeholder="(XX) XXXXX-XXXX"
+          :mask="['(##) ####-####', '(##) #####-####']"
           v-model="form.tell1"
         />
       </b-form-group>
       <b-form-group label="Telefone 2">
-        <b-input
-          class="base-input"
+        <the-mask
+          class="form-control base-input"
           name="tell2"
-          type="text"
           placeholder="(XX) XXXXX-XXXX"
+          :mask="['(##) ####-####', '(##) #####-####']"
           v-model="form.tell2"
         />
       </b-form-group>
@@ -73,51 +73,64 @@
     </div>
 
     <div id="step-3" v-if="step == 3">
+      <b-form-group label="CEP">
+        <the-mask
+          class="form-control base-input"
+          name="cep"
+          placeholder="CEP"
+          :mask="['#####-###']"
+          v-model="form.zip"
+        />
+      </b-form-group>
       <b-form-group label="Rua">
         <b-input
           class="base-input"
           name="rua"
           type="text"
           placeholder="Rua"
-          v-model="form.streat"
+          v-model="form.address"
         />
       </b-form-group>
-      <b-form-group label="Número">
-        <b-input
-          class="base-input"
-          name="num"
-          type="text"
-          placeholder="Número"
-          v-model="form.tell2"
-        />
-      </b-form-group>
-      <b-form-group label="Bairro">
-        <b-input
-          class="base-input"
-          name="district"
-          type="text"
-          placeholder="Bairro"
-          v-model="form.district"
-        />
-      </b-form-group>
-      <b-form-group label="Cidade">
-        <b-input
-          class="base-input"
-          name="city"
-          type="text"
-          placeholder="Cidade"
-          v-model="form.city"
-        />
-      </b-form-group>
-      <b-form-group label="Estado">
-        <b-input
-          class="base-input"
-          name="uf"
-          type="text"
-          placeholder="UF"
-          v-model="form.uf"
-        />
-      </b-form-group>
+      <div class="input-double">
+        <b-form-group label="Bairro">
+          <b-input
+            class="base-input"
+            name="district"
+            type="text"
+            placeholder="Bairro"
+            v-model="form.district"
+          />
+        </b-form-group>
+        <b-form-group label="Número">
+          <b-input
+            class="base-input"
+            name="num"
+            type="text"
+            placeholder="Número"
+            v-model="form.tell2"
+          />
+        </b-form-group>
+      </div>
+      <div class="input-double">
+        <b-form-group label="Cidade">
+          <b-input
+            class="base-input"
+            name="city"
+            type="text"
+            placeholder="Cidade"
+            v-model="form.city"
+          />
+        </b-form-group>
+        <b-form-group label="Estado">
+          <b-input
+            class="base-input"
+            name="uf"
+            type="text"
+            placeholder="UF"
+            v-model="form.uf"
+          />
+        </b-form-group>
+      </div>
       <div class="actions">
         <button class="btn btn-primary btn-login" @click="backStep">
           <ArrowIcon color="#FFFFFF" rotate="270"/>

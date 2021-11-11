@@ -9,7 +9,7 @@ import {
 
 
 const state = {
-	mobile: false,
+	mobile: sessionStorage.getItem("mobile") || false,
 };
 
 const getters = {
@@ -17,7 +17,10 @@ const getters = {
 };
 
 const mutations = {
-	[SET_MOBILE]: (state) => state.mobile = !state.mobile,
+	[SET_MOBILE]: (state) => {
+		state.mobile = !state.mobile
+		sessionStorage.setItem("mobile", state.mobile);
+	},
 };
 
 const actions = {
