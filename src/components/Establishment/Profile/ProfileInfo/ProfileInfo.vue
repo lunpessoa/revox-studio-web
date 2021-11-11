@@ -30,7 +30,18 @@
             <b-input type="text" v-model="form.email" disabled/>
           </b-form-group>
           <b-form-group label="Data de Nascimento">
-            <b-input type="text" v-model="form.dateBorn" :disabled="!isEdit"/>
+            <v-datepicker v-model="form.dateBorn" :masks="{input: 'DD/MM/YYYY'}" color="purple">
+              <template v-slot="{ inputValue, inputEvents }">
+                <b-input 
+                  class="form-control base-input"
+                  name="dateBorn"
+                  placeholder="DD/MM/YYYY"
+                  :value="inputValue"
+                  :disabled="!isEdit"
+                  v-on="inputEvents"
+                />
+              </template>
+            </v-datepicker>
           </b-form-group>
           <b-form-group label="Telefone 1">
             <the-mask

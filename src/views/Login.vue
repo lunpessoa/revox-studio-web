@@ -21,7 +21,7 @@
             @keyup.enter="submitLogin()"
           />
         </b-form-group>
-        <b-form-group label="Password">
+        <b-form-group label="Senha">
           <PasswordInput 
             v-model="form.password" 
             placeholder="Senha" 

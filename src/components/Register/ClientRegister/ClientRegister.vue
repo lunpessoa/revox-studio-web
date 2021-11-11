@@ -15,17 +15,21 @@
           name="name"
           type="text"
           placeholder="Nome"
-          v-model="form.nome"
+          v-model="form.name"
         />
       </b-form-group>
       <b-form-group label="Data de Nascimento">
-        <b-input
-          class="base-input"
-          name="dateNasc"
-          type="text"
-          placeholder="DD/MM/YYYY"
-          v-model="form.dateNasc"
-        />
+        <v-datepicker v-model="form.dateBorn" :masks="{input: 'DD/MM/YYYY'}" color="purple">
+          <template v-slot="{ inputValue, inputEvents }">
+            <b-input 
+              class="form-control base-input"
+              name="dateBorn"
+              placeholder="DD/MM/YYYY"
+              :value="inputValue"
+              v-on="inputEvents"
+            />
+          </template>
+        </v-datepicker>
       </b-form-group>
       <div class="actions">
         <button class="btn btn-primary btn-login" @click="nextStep">
@@ -125,6 +129,7 @@ export default {
     return {
       form: {
         imageFile: null,
+        dateBorn: '',
         email: null,
         password: null
       },
