@@ -17,7 +17,14 @@
             <b-input type="text" v-model="form.name" :disabled="!isEdit"/>
           </b-form-group>
           <b-form-group label="CPF">
-            <b-input type="text" v-model="form.cpf" :disabled="!isEdit"/>
+            <the-mask 
+              class="form-control"
+              name="cpf"
+              placeholder="CPF"
+              v-model="form.cpf"
+              :mask="'###.###.###-##'"
+              :disabled="!isEdit" 
+            />
           </b-form-group>
           <b-form-group label="Email">
             <b-input type="text" v-model="form.email" disabled/>
@@ -37,10 +44,24 @@
             </v-datepicker>
           </b-form-group>
           <b-form-group label="Telefone 1">
-            <b-input type="text" v-model="form.tell1" :disabled="!isEdit"/>
+             <the-mask
+              class="form-control"
+              name="tell1"
+              placeholder="(XX) XXXXX-XXXX"
+              :mask="['(##) ####-####', '(##) #####-####']"
+              v-model="form.tell1"
+              :disabled="!isEdit"
+            />
           </b-form-group>
           <b-form-group label="Telefone 2">
-            <b-input type="text" v-model="form.tell2" :disabled="!isEdit"/>
+            <the-mask
+              class="form-control"
+              name="tell2"
+              placeholder="(XX) XXXXX-XXXX"
+              :mask="['(##) ####-####', '(##) #####-####']"
+              v-model="form.tell2"
+              :disabled="!isEdit"
+            />
           </b-form-group>
           <button class="btn btn-primary d-block" v-if="isEdit">Alterar Senha</button>
         </form>

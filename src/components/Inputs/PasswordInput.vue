@@ -8,7 +8,7 @@
 			name="password"
 			:value="value"
 			:placeholder="placeholder"
-			@input="$emit('input', $event.target.value)"
+			@input="(value) => $emit('input', value)"
 			:minlength="min"
 			:maxlength="max"
 		/>

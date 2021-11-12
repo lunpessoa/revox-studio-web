@@ -10,7 +10,7 @@
         <h2 class="mb-2">Entre para ReVox</h2>
         <span>Entre com seu email e senha abaixo</span>
       </div>
-      <form class="mt-3">
+      <form class="mt-3" @submit.prevent>
         <b-form-group label="Email">
           <b-input
             class="base-input"
@@ -23,7 +23,7 @@
         </b-form-group>
         <b-form-group label="Senha">
           <PasswordInput 
-            v-model="form.password" 
+            v-model="form.senha" 
             placeholder="Senha" 
             :min="'6'" 
             :max="'16'"
@@ -39,7 +39,7 @@
       </form>
     </div>
     <transition name="fade">
-      <Loader v-if="loading" />
+      <Loader v-if="!isLoaded" />
     </transition>
   </div>
 </template>
@@ -48,6 +48,11 @@
 import RevoxIcon from "@/components/Shared/Icons/Logo";
 import PasswordInput from "@/components/Inputs/PasswordInput";
 import Loader from "@/components/Shared/Loader/Loader";
+
+import { 
+  LOGIN_REQUEST,
+  LOGOUT 
+} from '@/store/auth/actions';
 
 export default {
   name: "Login",
@@ -60,14 +65,34 @@ export default {
     return {
       form: {
         email: null,
-        password: null
+        senha: null
       },
-      loading: false
     };
+  },
+  created() {
+    this.$store.dispatch(LOGOUT);
+  },
+  computed: {
+    isLoaded() {
+      return this.$store.getters.isLoginLoaded;
+    }
   },
   methods: {
     submitLogin() {
-      this.loading = true;
+      this.$store
+				.dispatch(LOGIN_REQUEST, this.form)
+				.then((data) => {
+          if(data.idStatus === 1) {
+            this.$router.push({ name: 'ClientEstablishments' });
+          }
+          if(data.idStatus === 2) {
+            this.$router.push({ name: 'EstablishmentSchedule' });
+          }
+				})
+				.catch(e => {
+          console.log(e);
+					// this.$toastr.e(e.response.data.message);
+				})
     }
   }
 };

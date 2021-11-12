@@ -32,8 +32,10 @@ import RevoxIcon from "@/components/Shared/Icons/Logo";
 import Tabs from "@/components/Shared/Tabs/Tabs";
 import Loader from "@/components/Shared/Loader/Loader";
 
+import { LOGOUT } from '@/store/auth/actions';
+
 export default {
-  name: "Login",
+  name: "Register",
   components: {
     Loader,
     Tabs,
@@ -51,6 +53,9 @@ export default {
       step: 1,
       loading: false,
     };
+  },
+  created() {
+    this.$store.dispatch(LOGOUT);
   },
   computed: {
     tabsComponents() {

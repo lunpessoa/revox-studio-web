@@ -15,7 +15,7 @@
           name="name"
           type="text"
           placeholder="Nome do Estabelecimento"
-          v-model="form.nameEstablishment"
+          v-model="form.nomeEstab"
         />
       </b-form-group>
       <b-form-group label="Responsável">
@@ -24,7 +24,7 @@
           name="name"
           type="text"
           placeholder="Nome do Responsável"
-          v-model="form.nameOwner"
+          v-model="form.donoEstab"
         />
       </b-form-group>
       <div class="actions">
@@ -40,7 +40,7 @@
           class="form-control base-input"
           name="cpf"
           placeholder="CPF / CNPJ"
-          v-model="form.CpfCnpj"
+          v-model="form.cnpjEstab"
           :mask="['###.###.###-##', '##.###.###/####-##']" 
         />
       </b-form-group>
@@ -50,7 +50,7 @@
           name="tell1"
           placeholder="(XX) XXXXX-XXXX"
           :mask="['(##) ####-####', '(##) #####-####']"
-          v-model="form.tell1"
+          v-model="form.telefoneEstab"
         />
       </b-form-group>
       <b-form-group label="Telefone 2">
@@ -59,7 +59,7 @@
           name="tell2"
           placeholder="(XX) XXXXX-XXXX"
           :mask="['(##) ####-####', '(##) #####-####']"
-          v-model="form.tell2"
+          v-model="form.telefoneDono"
         />
       </b-form-group>
       <div class="actions">
@@ -79,7 +79,7 @@
           name="cep"
           placeholder="CEP"
           :mask="['#####-###']"
-          v-model="form.zip"
+          v-model="form.cepEstab"
         />
       </b-form-group>
       <b-form-group label="Rua">
@@ -88,7 +88,7 @@
           name="rua"
           type="text"
           placeholder="Rua"
-          v-model="form.address"
+          v-model="form.endereçoEstab"
         />
       </b-form-group>
       <div class="input-double">
@@ -98,7 +98,7 @@
             name="district"
             type="text"
             placeholder="Bairro"
-            v-model="form.district"
+            v-model="form.bairroEstab"
           />
         </b-form-group>
         <b-form-group label="Número">
@@ -107,7 +107,7 @@
             name="num"
             type="text"
             placeholder="Número"
-            v-model="form.tell2"
+            v-model="form.numeroEstab"
           />
         </b-form-group>
       </div>
@@ -148,12 +148,12 @@
           name="email"
           type="email"
           placeholder="Email"
-          v-model="form.email"
+          v-model="form.emailDono"
         />
       </b-form-group>
       <b-form-group label="Senha">
         <PasswordInput 
-          v-model="form.password" 
+          v-model="passwords.password" 
           placeholder="Senha" 
           :min="'6'" 
           :max="'16'"
@@ -162,7 +162,7 @@
       <b-form-group label="Confirmar Senha">
         <PasswordInput 
           id="confirmPassword"
-          v-model="form.confirmPassword" 
+          v-model="passwords.confirmPassword" 
           placeholder="Confirmar Senha" 
           :min="'6'" 
           :max="'16'"
@@ -183,6 +183,8 @@ import ArrowIcon from "@/components/Shared/Icons/ArrowIcon";
 import ImageInput from "@/components/Inputs/ImageInput";
 import PasswordInput from "@/components/Inputs/PasswordInput";
 
+import { REGISTER_ESTABLISHMENT } from '@/store/register/actions';
+
 export default {
   name: "EstablishmentRegister",
   components: {
@@ -193,16 +195,45 @@ export default {
   data() {
     return {
       form: {
-        imageFile: null,
-        email: null,
-        password: null
+        // idCliente: 0,
+        nomeEstab: '',
+        cnpjEstab: '',
+        telefoneEstab: '',
+        endereçoEstab: '',
+        bairroEstab: '',
+        cepEstab: '',
+        numeroEstab: '',
+        donoEstab: '',
+        cpfDono: '00000000000',
+        dtNascimento: '2013-10-01T00:00:00.000Z',
+        emailDono: '',
+        telefoneDono: '',
+        senhaEstab: '',
+      },
+      passwords: {
+        password: '',
+        confirmPassword: '',
       },
       step: 1,
     };
   },
   methods: {
     submitLogin() {
-      this.loading = true;
+      if(this.passwords.password !== this.passwords.confirmPassword) {
+        console.log('senhas não batem!');
+        return
+      }
+      this.form.senhaEstab = this.passwords.confirmPassword;
+      console.log(this.form);
+      this.$store
+				.dispatch(REGISTER_ESTABLISHMENT, this.form)
+				.then(() => {
+					console.log("Cadastrou!");
+				})
+				.catch(e => {
+          console.log(e);
+					// this.$toastr.e(e.response.data.message);
+				})
     },
     onPhotoSelected(event) {
       this.form.imageFile = event.target.files[0];

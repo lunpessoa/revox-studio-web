@@ -25,7 +25,8 @@ export default {
       return this.$store.getters.getMobile;
     },
     isAuthenticated() {
-      return true;
+      console.log('Logged Status',this.$store.getters.isLogged);
+      return this.$store.getters.isLogged;
     }
   }
 };

@@ -58,15 +58,15 @@ export default {
   },
   computed: {
     routes() {
-      if(this.userType == "establishment") {
-        return establishmentRoutes
+      if(this.userType == 1) {
+        return clientRoutes;
       }
-      if(this.userType == "client") {
-        return clientRoutes
+      if(this.userType == 2) {
+        return establishmentRoutes;
       }
     },
     userType() {
-      return "establishment";
+      return this.$store.getters.getUserType;
     },
     isMobile() {
       return this.$store.getters.getMobile;

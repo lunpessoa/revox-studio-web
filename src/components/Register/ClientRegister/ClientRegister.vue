@@ -15,11 +15,11 @@
           name="name"
           type="text"
           placeholder="Nome"
-          v-model="form.name"
+          v-model="form.nomeCliente"
         />
       </b-form-group>
       <b-form-group label="Data de Nascimento">
-        <v-datepicker v-model="form.dateBorn" :masks="{input: 'DD/MM/YYYY'}" color="purple">
+        <v-datepicker v-model="form.dtNascimento" :masks="{input: 'DD/MM/YYYY'}" color="purple">
           <template v-slot="{ inputValue, inputEvents }">
             <b-input 
               class="form-control base-input"
@@ -44,7 +44,7 @@
           class="form-control base-input"
           name="cpf"
           placeholder="CPF"
-          v-model="form.cpf"
+          v-model="form.cpfCliente"
           :mask="['###.###.###-##', '##.###.###/####-##']" 
         />
       </b-form-group>
@@ -54,7 +54,7 @@
           name="tell1"
           placeholder="(XX) XXXXX-XXXX"
           :mask="['(##) ####-####', '(##) #####-####']"
-          v-model="form.tell1"
+          v-model="form.telefoneCliente"
         />
       </b-form-group>
       <b-form-group label="Telefone 2">
@@ -63,7 +63,7 @@
           name="tell2"
           placeholder="(XX) XXXXX-XXXX"
           :mask="['(##) ####-####', '(##) #####-####']"
-          v-model="form.tell2"
+          v-model="form.telefoneCliente2"
         />
       </b-form-group>
       <div class="actions">
@@ -83,12 +83,12 @@
           name="email"
           type="email"
           placeholder="Email"
-          v-model="form.email"
+          v-model="form.emailCliente"
         />
       </b-form-group>
       <b-form-group label="Senha">
         <PasswordInput 
-          v-model="form.password" 
+          v-model="passwords.password" 
           placeholder="Senha" 
           :min="'6'" 
           :max="'16'"
@@ -97,7 +97,7 @@
       <b-form-group label="Confirmar Senha">
         <PasswordInput 
           id="confirmPassword"
-          v-model="form.confirmPassword" 
+          v-model="passwords.confirmPassword" 
           placeholder="Confirmar Senha" 
           :min="'6'" 
           :max="'16'"
@@ -118,6 +118,8 @@ import ArrowIcon from "@/components/Shared/Icons/ArrowIcon";
 import ImageInput from "@/components/Inputs/ImageInput";
 import PasswordInput from "@/components/Inputs/PasswordInput";
 
+import { REGISTER_CLIENT } from '@/store/register/actions';
+
 export default {
   name: "ClientRegister",
   components: {
@@ -128,17 +130,39 @@ export default {
   data() {
     return {
       form: {
-        imageFile: null,
-        dateBorn: '',
-        email: null,
-        password: null
+        // idCliente: 0,
+        nomeCliente: '',
+        cpfCliente: '',
+        dtNascimento: '',
+        telefoneCliente: '',
+        emailCliente: '',
+        senhaCliente: '',
+        telefoneCliente2: '',
+      },
+      passwords: {
+        password: '',
+        confirmPassword: '',
       },
       step: 1,
     };
   },
   methods: {
     submitLogin() {
-      this.loading = true;
+      if(this.passwords.password !== this.passwords.confirmPassword) {
+        console.log('senhas não batem!');
+        return
+      }
+      this.form.senhaCliente = this.passwords.confirmPassword;
+      console.log(this.form);
+      this.$store
+				.dispatch(REGISTER_CLIENT, this.form)
+				.then(() => {
+					this.$router.push({ name: 'Login' });
+				})
+				.catch(e => {
+          console.log(e);
+					// this.$toastr.e(e.response.data.message);
+				})
     },
     onPhotoSelected(event) {
       this.form.imageFile = event.target.files[0];

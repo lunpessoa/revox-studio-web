@@ -1,10 +1,10 @@
 <template>
-  <header id="Header" :class="[isMobile && 'active']">
+  <header id="Header" :class="[mobile ? 'active': '']">
     <div class="toggle-icon" @click="toggleMenu">
       <HamburguerIcon  />
     </div>
     <div class="user-container">
-      <span>Luan Pessoa</span>
+      <span>{{ userName }}</span>
       <div class="img-container">
         <img src="../../../assets/images/user.png" alt="">
       </div>
@@ -27,18 +27,24 @@ export default {
   data() {
     return {
       colors: ["#FFFFFF", "#3B185F"],
+      mobile: false,
     }
+  },
+  mounted(){
+    this.mobile = this.isMobile;
   },
   methods: {
     toggleMenu() {
-      console.log(this.isMobile);
-      this.$store.dispatch(SET_MOBILE);
-      console.log(this.isMobile);
+      this.mobile = !this.mobile;
+      this.$store.dispatch(SET_MOBILE, this.mobile);
     }
   },
   computed: {
     isMobile() {
       return this.$store.getters.getMobile;
+    },
+    userName() {
+      return this.$store.getters.getUserName;
     }
   }
 };
