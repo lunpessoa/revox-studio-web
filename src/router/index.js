@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '@/store';
+import { PERMISSIONS } from '@/utils/users';
 
 import Login from '@/views/Login.vue';
 import Register from '@/views/Register.vue';
@@ -21,11 +22,18 @@ import ScheduleIcon from '@/components/Shared/Icons/ScheduleIcon'
 Vue.use(VueRouter);
 
 function authGuard({to, from, next}, type) {
-	if (store.getters.isLogged && store.getters.getUserType == type) {
-		return next();
-	}
-	return next('/Login');
+	if (store.getters.isLogged && store.getters.getUserType == type) return next();
+  if (store.getters.getUserType !== type) return next(`/${PERMISSIONS.USER_URL[store.getters.getUserType]}`)
+	return next('/login');
 }
+
+const setCorrectRoute = (to, from, next) => {
+  if (store.getters.isLogged) {
+    const url = `/${PERMISSIONS.USER_URL[store.getters.getUserType]}`;
+    return next(url);
+  }
+  next(`/login`);
+};
 
 export const unauthenticatedRoutes = [
   {
@@ -43,8 +51,7 @@ export const unauthenticatedRoutes = [
 const home = {
     path: '/',
     name: 'Home',
-    redirect: '/establishments',
-    beforeEnter: (to, from, next) => authGuard({ to, from, next }, 1),
+    beforeEnter: (to, from, next) => setCorrectRoute(to, from, next),
 }
 
 export const clientRoutes = [
