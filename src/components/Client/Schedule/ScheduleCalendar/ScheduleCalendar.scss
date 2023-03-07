@@ -1,0 +1,97 @@
+.calendar-container {
+	margin-right: 32px;
+    .custom-calendar.vc-container {
+        background: transparent;
+        width: 100%;
+        border: none;
+        .header-title{
+            width: 100%;
+            height: 48px;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            h2 {
+                font-family: "Poppins", sans-serif;
+                font-size: 20px;
+                color: #234057;
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+        }
+        .vc-weeks {
+            .vc-weekday {
+                padding: 20px 0px;
+                font-family: "Poppins", sans-serif;
+                font-size: 14px;
+                color: #234057;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .vc-day {
+                height: 120px;
+                padding: 8px;
+                &:not(.on-bottom) {
+                    border-bottom: 1px solid #BCC1CD;
+                }
+                &:not(.on-right) {
+                    border-right: 1px solid #BCC1CD;
+                }
+                &.on-top {
+                    border-top: 1px solid #BCC1CD;
+                }
+                &.on-bottom {
+                    border-bottom: 1px solid #BCC1CD;
+                }
+                &.on-right {
+                    border-right: 1px solid #BCC1CD;
+                }
+                &.on-left {
+                    border-left: 1px solid #BCC1CD;
+                }
+                &.is-not-in-month {
+                    background-color: $light-primary;
+                }
+                .bg-event {
+                    padding: 8px;
+                    border-radius: 5px;
+                    &.btn-edit {
+                        cursor: pointer;
+                    }
+                }
+                .day-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .event-container {
+                        display: flex;
+                        flex-direction: column;
+                        padding-right: 5px;
+                        gap: 6px;
+                        overflow: auto;
+                        height: 76px; 
+                        // &::-webkit-scrollbar {
+                        //     width: 0px;
+                        // }
+                        // &::-webkit-scrollbar-track {
+                        //     display: none;
+                        // }
+                    }
+                }
+            }
+        }
+        .vc-header {
+            background-color: #f1f5f8;
+            padding: 10px 0;
+        }
+        .vc-arrows-container {
+            padding: 8px 10px 10px 165px;
+            .vc-arrow {
+                color: $primary;
+                &:hover {
+                    background: $light-primary;
+                }
+            }
+        }
+    }
+}

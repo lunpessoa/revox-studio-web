@@ -1,0 +1,56 @@
+.profile-address {
+    display: flex;
+    gap: 20px;
+
+    .basic-info {
+        flex: 1 1 auto;
+        background: $white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        padding: 20px;
+        overflow: hidden;
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: $primary-gray;
+            border: none;
+            border-radius: 10px;
+
+            h2 {
+                font-size: 24px;
+                font-weight: 700;
+                color: $dark-primary;
+            }
+
+            .btn-edit {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 20px;
+                color: $primary;
+                background: transparent;
+                font-weight: 700;
+                font-size: 14px;
+            }
+
+            .btn-close {
+                background: transparent;
+            }
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: $primary-gray;
+            border: none;
+            border-radius: 10px;
+
+            .btn-save {
+                padding: 6px 36px;
+            }
+        }
+    }
+}

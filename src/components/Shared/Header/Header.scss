@@ -1,0 +1,56 @@
+#Header {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  padding: 20px 40px 20px 340px;
+  margin-bottom: 40px;
+  background: $light-primary;
+  transition: width .5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	transition: padding .35s ease-out;
+
+  &.active {
+    padding: 20px 40px 20px 110px;
+  }
+  .toggle-icon {
+    position: relative;
+    cursor: pointer;
+    align-self: flex-start;
+
+    & > svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .user-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 300px;
+    height: 60px;
+    span {
+      white-space: nowrap;
+    }
+    .img-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      padding: 3px;
+      border-radius: 50%;
+      border: solid 1px $primary;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}

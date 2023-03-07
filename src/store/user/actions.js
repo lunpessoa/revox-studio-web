@@ -1,0 +1,2 @@
+export const SET_MOBILE = 'SET_MOBILE'
+export const SET_USER_PROFILE = 'SET_USER_PROFILE';

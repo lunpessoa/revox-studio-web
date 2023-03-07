@@ -1,12 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <template v-if="isAuthenticated">
+      <Sidebar />
+      <Header /> 
+    </template>
+    <div class="content-app" :class="[isMobile && 'active', !isAuthenticated && 'logout']">
+      <router-view />
     </div>
-    <router-view/>
   </div>
 </template>
+
+<script>
+import Sidebar from '@/components/Shared/Sidebar/Sidebar.vue';
+import Header from '@/components/Shared/Header/Header.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Sidebar,
+    Header,
+  },
+  computed: {
+    isMobile() {
+      return this.$store.getters.getMobile;
+    },
+    isAuthenticated() {
+      console.log('Logged Status',this.$store.getters.isLogged);
+      return this.$store.getters.isLogged;
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 @import "App.scss";

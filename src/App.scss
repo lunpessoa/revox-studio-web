@@ -26,6 +26,7 @@
 html,
 body,
 #app {
+	background: $primary-gray;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 600;
 }
@@ -90,6 +91,35 @@ table {
 	border-spacing: 0;
 }
 
+button:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.content-app {
+	margin-left: 300px;
+	padding: 0 20px 20px 40px;
+	transition: margin-left .35s ease-out;
+
+	&.logout {
+		padding: 20px;
+		margin-left: 0px;
+	}
+
+	&.active {
+		margin-left: 70px;
+	}
+}
+
+.input-double {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	& > * {
+		flex: 1 1 120px;
+	}
+}
+
 .loader-container {
 	position: absolute;
 	top: 0;
@@ -111,13 +141,13 @@ table {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #234057;
+	background: #F8AE36;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #345b7c;
+	background: #ffc15d;
 }
 
 /* Skeleton loader */
